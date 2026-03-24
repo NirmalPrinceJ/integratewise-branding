@@ -10,64 +10,16 @@ import { GeneratorsPage } from "./components/pages/GeneratorsPage";
 import { DocumentationPage } from "./components/pages/DocumentationPage";
 import { ReadyMadeContentPage } from "./components/pages/ReadyMadeContentPage";
 import { ProductLandingPages } from "./components/pages/ProductLandingPages";
-import { MarketingLandingPage } from "./components/pages/MarketingLandingPage";
-import { ProductDetailPage } from "./components/pages/ProductDetailPage";
-import { SpineDetailPage } from "./components/pages/SpineDetailPage";
-import { HowItWorksPage } from "./components/pages/HowItWorksPage";
-import { UseCasesPage } from "./components/pages/UseCasesPage";
-import { IntegrationsPage } from "./components/pages/IntegrationsPage";
-import { TrustPage } from "./components/pages/TrustPage";
-import { AboutPage } from "./components/pages/AboutPage";
-import { ContactPage } from "./components/pages/ContactPage";
-import { AppLandingPage } from "./components/pages/AppLandingPage";
+
+/**
+ * IntegrateWise Brand Hub - Internal Asset Management
+ * Domain: branding.integratewise.ai (or internal only)
+ * Purpose: Brand assets, design tokens, templates, documentation
+ */
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    Component: MarketingLandingPage,
-  },
-  {
-    path: "/product",
-    Component: ProductDetailPage,
-  },
-  {
-    path: "/spine",
-    Component: SpineDetailPage,
-  },
-  {
-    path: "/how-it-works",
-    Component: HowItWorksPage,
-  },
-  {
-    path: "/use-cases",
-    Component: UseCasesPage,
-  },
-  {
-    path: "/integrations",
-    Component: IntegrationsPage,
-  },
-  {
-    path: "/trust",
-    Component: TrustPage,
-  },
-  {
-    path: "/about",
-    Component: AboutPage,
-  },
-  {
-    path: "/contact",
-    Component: ContactPage,
-  },
-  {
-    path: "/demo",
-    Component: () => <Navigate to="/contact" replace />,
-  },
-  {
-    path: "/app-landing",
-    Component: AppLandingPage,
-  },
-  {
-    path: "/brand",
     Component: RootLayout,
     errorElement: (
       <div style={{ padding: 32, fontFamily: 'monospace', color: '#c00' }}>
