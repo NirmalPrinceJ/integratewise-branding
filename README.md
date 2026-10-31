@@ -37,7 +37,7 @@ There is no test or lint script. `react` and `react-dom` are peer dependencies a
 
 ## Run locally
 
-Node.js 18 or newer.
+Node.js 20 or newer. `react-router` 7.13.0 declares `engines.node` of `>=20.0.0`, so Node 18 is outside the supported range.
 
 ```bash
 npm install
@@ -76,7 +76,9 @@ These paths are what the router actually serves. Open them directly.
 
 ## Documentation packs
 
-`/documentation` reads pack metadata from `DocumentationPage` and markdown from `src/app/lib/documentationContent.ts`, which imports raw files in `src/imports/pasted_text/`.
+`/documentation` reads pack metadata from `DocumentationPage`. Mapped markdown lives in `src/app/lib/documentationContent.ts`, which imports raw files from `src/imports/pasted_text/`.
+
+A document renders markdown only when its `baseContent` field is set. That field is the gate: without it, the page shows “Document In Progress” and does not look up a file. When `baseContent` is set, the body is `getDocumentContent(id)` when that id is mapped, and `baseContent` when it is not. Several mapped ids reuse the same source file. Download buttons appear only for documents that have `baseContent`.
 
 | Query | Pack |
 | --- | --- |
